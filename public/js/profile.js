@@ -1,14 +1,13 @@
-// TODO: update this file
 document.querySelector("form").addEventListener("submit",e=>{
     e.preventDefault();
-    const projObj = {
-        name:document.querySelector("#name").value,
-        needed_funding:document.querySelector("#funding").value,
-        description:document.querySelector("#description").value,
+    const blogPostObj = {
+        title:document.querySelector("#title").value,
+        blog_post:document.querySelector("#blog_post").value,
+        comment:document.querySelector("#comment").value,
     }
-    fetch("/api/projects",{
+    fetch("/api/blogposts",{
         method:"POST",
-        body:JSON.stringify(projObj),
+        body:JSON.stringify(blogPostObj),
         headers:{
             "Content-Type":"application/json"
         }
@@ -16,7 +15,7 @@ document.querySelector("form").addEventListener("submit",e=>{
         if(res.ok){
            location.reload()
         } else {
-            alert("trumpet sound")
+            alert("Something went wrong")
         }
     })
 })
@@ -24,14 +23,14 @@ document.querySelector("form").addEventListener("submit",e=>{
 const allDelBtns = document.querySelectorAll(".del-btn");
 allDelBtns.forEach(button=>{
     button.addEventListener("click",()=>{
-        const idToDel = button.getAttribute("data-proj-id");
-        fetch(`/api/projects/${idToDel}`,{
+        const idToDel = button.getAttribute("data-blogpost-id");
+        fetch(`/api/blogpost/${idToDel}`,{
             method:"DELETE",
         }).then(res=>{
             if(res.ok){
                 location.reload()
             } else {
-                alert("trumpet sound")
+                alert("Something went wrong")
             }
         })
     })

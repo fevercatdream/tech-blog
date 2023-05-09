@@ -1,4 +1,3 @@
-// TODO: update this file
 const router = require('express').Router();
 const apiRoutes = require('./api');
 const frontEndRoutes = require("./frontEndRoutes.js")

@@ -1,9 +1,8 @@
-// TODO: update this file
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
-const projectRoutes = require('./projectRoutes');
+const blogpostRoutes = require('./blogpostRoutes');
 
 router.use('/users', userRoutes);
-router.use('/projects', projectRoutes);
+router.use('/blogpost', blogpostRoutes);
 
 module.exports = router;

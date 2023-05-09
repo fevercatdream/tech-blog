@@ -1,4 +1,3 @@
-// TODO: update this file
 document.querySelector("#logout").addEventListener("click",e=>{
     e.preventDefault();
     fetch("/api/users/logout",{
@@ -7,7 +6,7 @@ document.querySelector("#logout").addEventListener("click",e=>{
         if(res.ok){
            location.reload()
         } else {
-            alert("trumpet sound")
+            alert("Something went wrong")
         }
     })
 })

@@ -1,4 +1,3 @@
-// TODO: update this file
 //login form
 const loginForm = document.querySelector("#login-form");
 loginForm.addEventListener("submit",e=>{
@@ -17,10 +16,11 @@ loginForm.addEventListener("submit",e=>{
         if(res.ok){
            location.href = "/"
         } else {
-            alert("trumpet sound")
+            alert("Something went wrong")
         }
     })
 })
+
 //signup form
 const signupForm = document.querySelector("#signup-form");
 signupForm.addEventListener("submit",e=>{
@@ -40,7 +40,7 @@ signupForm.addEventListener("submit",e=>{
         if(res.ok){
            location.href = "/"
         } else {
-            alert("trumpet sound")
+            alert("Something went wrong")
         }
     })
 })

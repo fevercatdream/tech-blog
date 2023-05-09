@@ -1,3 +1,2 @@
---  TODO: update this file
-DROP DATABASE IF EXISTS _db;
-CREATE DATABASE _db;
+DROP DATABASE IF EXISTS blog_db;
+CREATE DATABASE blog_db;
