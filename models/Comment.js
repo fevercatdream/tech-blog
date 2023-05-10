@@ -12,7 +12,7 @@ Comment.init(
       autoIncrement: true,
     },
     comment: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT('long'),
     },
     user_id: {
         type: DataTypes.INTEGER,
@@ -26,10 +26,20 @@ Comment.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
+    blog_post_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'blog_post',
+        key: 'id',
+      },
+    },
   },
   {
     sequelize,
     timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'comment',
   }
 );
 

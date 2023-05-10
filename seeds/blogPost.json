@@ -1,24 +1,18 @@
 [
     {
       "title": "Notes on git",
-      "blog_post": "Moving files from local to repo. Untracked: edited but git doesn't do anything with it. Staged: (git add . || git add -A) stages the file aka git will bundle the change with the next commit. Committed: (git commit -m 'message') git has made a record of the change in a commit. Push: (git push) to move the files from local to repo.",
-      "user_id": 1,
-      "date_created": "DataTypes.NOW",
-      "comment_id": 1
+      "content": "Moving files from local to repo. Untracked: edited but git doesn't do anything with it. Staged: (git add . || git add -A) stages the file aka git will bundle the change with the next commit. Committed: (git commit -m 'message') git has made a record of the change in a commit. Push: (git push) to move the files from local to repo.",
+      "user_id": 1
     },
     {
       "title": "Notes on dotenv",
-      "blog_post": "dotenv, define environment variables, it is a useful way to protect sensitive data from being easily accessible, use to hide API keys",
-      "user_id": 2,
-      "date_created": "DataTypes.NOW",
-      "comment_id": 2
+      "content": "dotenv, define environment variables, it is a useful way to protect sensitive data from being easily accessible, use to hide API keys",
+      "user_id": 2
     },
     {
       "title": "npm packages",
-      "blog_post": "To initialize a package.json file that lists npm dependencies begin by typing the following into the terminal 'npm init -y', then 'npm install (package_name@version)'",
-      "user_id": 3,
-      "date_created": "DataTypes.NOW",
-      "comment_id": 3
+      "content": "To initialize a package.json file that lists npm dependencies begin by typing the following into the terminal 'npm init -y', then 'npm install (package_name@version)'",
+      "user_id": 3
     }
   ]
   

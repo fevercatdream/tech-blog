@@ -1,8 +1,7 @@
+<button>Logged In</button>
 <h1>Tech Blog</h1>
 {{#each allBlogPosts}}
-    <h3>{{title}} by {{user.name}}</h3>
-    <p>{{blog_post}}</p>
-    <p>Date: ${{date_created}}</p>
-    <p>Comments: ${{comment.comment}}</p>
+    <a href="/blogpost/{{id}}"><span>{{title}} by {{user.name}}</span></a>
+    <p>Date: {{date_created}}</p>
     <hr>
 {{/each}}

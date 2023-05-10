@@ -15,17 +15,11 @@ const seedDatabase = async () => {
   });
 
   for (const blogPost of blogData) {
-    await BlogPost.create({
-      ...blogPost,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-    });
+    await BlogPost.create(blogPost);
   }
 
   for (const comment of commentData) {
-    await Comment.create({
-      ...comment,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-    });
+    await Comment.create(comment);
   }
 
   process.exit(0);

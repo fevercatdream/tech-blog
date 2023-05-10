@@ -15,8 +15,8 @@ BlogPost.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    blog_post: {
-      type: DataTypes.STRING,
+    content: {
+      type: DataTypes.TEXT('long'),
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -30,17 +30,13 @@ BlogPost.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    comment_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'Comment',
-        key: 'id',
-      },
-    },
   },
   {
     sequelize,
     timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'blog_post',
   }
 );
 

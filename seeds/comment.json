@@ -2,16 +2,16 @@
     {
       "comment": "git can have issues if you run commands out of order",
       "user_id": 2,
-      "date_created": "DataTypes.NOW"
+      "blog_post_id": 1
     },
     {
         "comment": "add Config Vars to Heroku settings page for the specific app",
         "user_id": 3,
-        "date_created": "DataTypes.NOW"
+        "blog_post_id": 2
     },
     {
         "comment": "mysql2 is a useful npm package",
         "user_id": 1,
-        "date_created": "DataTypes.NOW"
+        "blog_post_id": 3
     }
   ]

@@ -9,7 +9,7 @@ router.get("/",(req,res)=>{
         const hbsData = blogData.map(blogPost => blogPost.get({plain:true}));
         console.log(hbsData);
         res.render("index",{
-            allBlogPosts:hbsData,
+            allBlogPosts: hbsData,
             logged_in: req.session.logged_in
         })
     })
@@ -17,12 +17,18 @@ router.get("/",(req,res)=>{
 
 router.get("/blogpost/:id",(req,res)=>{
     BlogPost.findByPk(req.params.id,{
-        include:[User]
+        include:[User, {
+            model: Comment,
+            include: User
+        }]
     }).then(blogData=>{
         const hbsData = blogData.get({plain:true});
         hbsData.logged_id=req.session.logged_id
         console.log(hbsData);
-        res.render("singleBlogPost",hbsData)
+        res.render("singleBlogPost", {
+            ...hbsData,
+            logged_in: req.session.logged_in
+        })
     })
 })
 
