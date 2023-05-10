@@ -2,7 +2,7 @@
 
 ## Description
 
-
+A content management system (CMS) is a software application that enables users to create, edit, collaborate on, publish and store digital content. This CRUD (create, read, update, and delete) application creates a CMS-style blog site similar to a Wordpress site following the MVC (Model–view–controller) paradigm in architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM (Object–relational mapping), and the express-session npm package for authentication.
 
 ### User Story
 
@@ -94,10 +94,10 @@ This application uses the following:
 
 ## Usage
 
-
+A CMS-style blog site to add blog posts and comments on the blog posts.
 
 ### Deployed Site
-
+https://thawing-springs-36978.herokuapp.com/
 
 ### Screenshot Desktop View
 
@@ -148,10 +148,6 @@ A Step By Step Guide To Using Handlebars With Your Node js App: https://waelyasm
 
 Express Session Cookie: https://github.com/expressjs/session#cookie
 
-Canva: https://www.canva.com/
-<br />
-- Canva is a free-to-use online graphic design tool
-
 https://favicon.io/
 <br />
 - favicon generator / converter
@@ -183,7 +179,5 @@ Please refer to the LICENSE in the repo.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Features
 
-If your project has a lot of features, list them here.
 
