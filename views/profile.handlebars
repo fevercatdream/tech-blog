@@ -1,10 +1,10 @@
 <h2>{{name}}'s page</h2>
 <h3>Blog Posts</h3>
 {{#each blogpost}}
-    <h3>{{title}} by {{name}}</h3>
-    <p>{{blog_post}}</p>
-    <p>Date: ${{date_created}}</p>
-    <p>Comments: ${{comment.comment}}</p>
+    <h3>{{title}} by {{user.name}}</h3>
+    <p>{{content}}</p>
+    <p>Date: {{date_created}}</p>
+    <p>Comments: {{comment.comment}}</p>
     <button class="del-btn" data-blogpost-id="{{id}}">Delete</button>
     <hr>
 {{/each}}
