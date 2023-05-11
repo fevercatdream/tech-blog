@@ -1,4 +1,12 @@
 <h2>{{name}}'s page</h2>
+
+<h3>Add a new Blog Post</h3>
+<form action="">
+    <input type="text" id="title" placeholder="title">
+    <textarea id="blog_post" placeholder="blog post"></textarea>
+    <button>Add a blog post</button>
+</form>
+
 <h3>Blog Posts</h3>
 {{#each blog_posts}}
     <h3>{{title}}</h3>
@@ -15,12 +23,5 @@
     <button class="comment-del-btn" data-comment-id="{{id}}">Delete</button>
     <hr>
 {{/each}}
-
-<h3>Add a new Blog Post</h3>
-<form action="">
-    <input type="text" id="title" placeholder="title">
-    <textarea id="blog_post" placeholder="blog post"></textarea>
-    <button>Add a blog post</button>
-</form>
 
 <script src="/js/profile.js"></script>

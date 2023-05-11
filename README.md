@@ -99,13 +99,13 @@ A CMS-style blog site to add blog posts and comments on the blog posts.
 ### Deployed Site
 https://thawing-springs-36978.herokuapp.com/
 
-### Screenshot Desktop View
+<!-- ### Screenshot Desktop View -->
 
 
-### Screenshot Tablet View
+<!-- ### Screenshot Tablet View -->
 
 
-### Screenshot Mobile View
+<!-- ### Screenshot Mobile View -->
 
 
 
@@ -148,25 +148,25 @@ A Step By Step Guide To Using Handlebars With Your Node js App: https://waelyasm
 
 Express Session Cookie: https://github.com/expressjs/session#cookie
 
-https://favicon.io/
+<!-- https://favicon.io/
 <br />
-- favicon generator / converter
+- favicon generator / converter -->
 
-Image Online: https://crop-circle.imageonline.co/
+<!-- Image Online: https://crop-circle.imageonline.co/
 <br />
-- crop a circle in image online
+- crop a circle in image online -->
 
-Wikimedia: https://commons.wikimedia.org/wiki/Main_Page
+<!-- Wikimedia: https://commons.wikimedia.org/wiki/Main_Page
 <br />
-- images
+- images -->
 
-Open Access at the National Gallery of Art: https://www.nga.gov/open-access-images.html
+<!-- Open Access at the National Gallery of Art: https://www.nga.gov/open-access-images.html
 <br />
-- images
+- images -->
 
-Getty Museum Collection: https://www.getty.edu/art/collection/
+<!-- Getty Museum Collection: https://www.getty.edu/art/collection/
 <br />
-- images
+- images -->
 
 
 ## License
