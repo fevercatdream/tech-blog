@@ -7,7 +7,6 @@ router.get("/",(req,res)=>{
         include:[User]
     }).then(blogData=>{
         const hbsData = blogData.map(blogPost => blogPost.get({plain:true}));
-        console.log(hbsData);
         res.render("index",{
             allBlogPosts: hbsData,
             logged_in: req.session.logged_in
@@ -28,7 +27,6 @@ router.get("/blogpost/:id",(req,res)=>{
         } 
         const hbsData = blogData.get({plain:true});
         hbsData.logged_id=req.session.logged_id
-        console.log(hbsData);
         res.render("singleBlogPost", {
             ...hbsData,
             logged_in: req.session.logged_in
@@ -58,7 +56,6 @@ router.get("/profile",(req,res)=>{
             include:[BlogPost, Comment]
         }).then(userData=>{
             const hbsData = userData.get({plain:true})
-            console.log(hbsData)
             hbsData.logged_in=req.session.logged_in;
             res.render("profile",hbsData)
         })

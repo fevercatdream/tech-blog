@@ -2,6 +2,14 @@
 <p>Date: {{date_created}}</p>
 <p>{{content}}</p>
 <h2>Comments</h2>
+{{#if logged_in}}
+    <h3>Add a comment</h3>
+    <form id="comment_form" action="">
+        <textarea id="blog_comment" placeholder="comment"></textarea>
+        <button>Add a comment</button>
+        <input id="blog_post_id" type="hidden" value="{{id}}" />
+    </form>
+{{/if}}
 {{#each comments}}
     <p>{{comment}}</p>
     <span> by {{user.name}}</span>
@@ -10,4 +18,4 @@
     <hr>
 {{/each}}
 
-
+<script src="/js/singleBlogPost.js"></script>

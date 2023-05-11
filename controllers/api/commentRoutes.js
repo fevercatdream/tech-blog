@@ -6,6 +6,7 @@ router.post('/', async (req, res) => {
     return res.status(403).json({msg:"Login first!"})
   }
   try {
+    console.log("Howdy", req.body);
     const newCommentPost = await Comment.create({
       ...req.body,
       user_id: req.session.user_id,
