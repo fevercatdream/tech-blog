@@ -12,6 +12,7 @@
     <h3>{{title}}</h3>
     <p>{{content}}</p>
     <p>Date: {{date_created}}</p>
+    <button class="post-update-btn" data-blogpost-update-id="{{id}}">Update</button>
     <button class="post-del-btn" data-blogpost-id="{{id}}">Delete</button>
     <hr>
 {{/each}}
@@ -20,6 +21,8 @@
 {{#each comments}}
     <p>{{comment}}</p>
     <p>Date: {{date_created}}</p>
+    <a href="/blogpost/{{blog_post_id}}">Go To Blog Post</a>
+    <button class="comment-update-btn" data-comment-update-id="{{id}}">Update</button>
     <button class="comment-del-btn" data-comment-id="{{id}}">Delete</button>
     <hr>
 {{/each}}

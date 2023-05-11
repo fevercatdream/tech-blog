@@ -19,6 +19,22 @@ document.querySelector("form").addEventListener("submit",e=>{
     })
 })
 
+const allUpdateBtns = document.querySelectorAll(".post-update-btn");
+allDelBtns.forEach(button=>{
+    button.addEventListener("click",()=>{
+        const idToUpdate = button.getAttribute("data-blogpost-update-id");
+        fetch(`/api/blogpost/${idToUpdate}`,{
+            method:"PUT",
+        }).then(res=>{
+            if(res.ok){
+                location.reload()
+            } else {
+                alert("Something went wrong")
+            }
+        })
+    })
+})
+
 const allDelBtns = document.querySelectorAll(".post-del-btn");
 allDelBtns.forEach(button=>{
     button.addEventListener("click",()=>{
