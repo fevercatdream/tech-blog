@@ -20,7 +20,7 @@ document.querySelector("form").addEventListener("submit",e=>{
 })
 
 const allUpdateBtns = document.querySelectorAll(".post-update-btn");
-allDelBtns.forEach(button=>{
+allUpdateBtns.forEach(button=>{
     button.addEventListener("click",()=>{
         const idToUpdate = button.getAttribute("data-blogpost-update-id");
         fetch(`/api/blogpost/${idToUpdate}`,{
