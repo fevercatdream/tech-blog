@@ -22,6 +22,10 @@ router.get("/blogpost/:id",(req,res)=>{
             include: User
         }]
     }).then(blogData=>{
+        if (!blogData) {
+            res.status(404).end("Not found")
+            return;
+        } 
         const hbsData = blogData.get({plain:true});
         hbsData.logged_id=req.session.logged_id
         console.log(hbsData);
@@ -41,12 +45,17 @@ router.get("/login",(req,res)=>{
     })
 })
 
+router.get("/logout",(req,res)=>{
+    req.session.destroy();
+    return res.redirect("/")
+})
+
 router.get("/profile",(req,res)=>{
     if(!req.session.logged_in){
         return res.redirect("/login")
     } else {
         User.findByPk(req.session.user_id,{
-            include:[BlogPost]
+            include:[BlogPost, Comment]
         }).then(userData=>{
             const hbsData = userData.get({plain:true})
             console.log(hbsData)
