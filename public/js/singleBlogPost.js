@@ -1,3 +1,4 @@
+// front end route get single blog post
 document.querySelector("#comment_form").addEventListener("submit",e=>{
     e.preventDefault();
     const commentObj = {

@@ -1,3 +1,4 @@
+// front end route add blog post
 document.querySelector("form").addEventListener("submit",e=>{
     e.preventDefault();
     const blogPostObj = {
@@ -19,22 +20,32 @@ document.querySelector("form").addEventListener("submit",e=>{
     })
 })
 
-const allUpdateBtns = document.querySelectorAll(".post-update-btn");
-allUpdateBtns.forEach(button=>{
-    button.addEventListener("click",()=>{
-        const idToUpdate = button.getAttribute("data-blogpost-update-id");
-        fetch(`/api/blogpost/${idToUpdate}`,{
+// front end route update blog post
+const userBlogPosts = document.querySelectorAll(".user-blog-post");
+for(let userBlogPostObj of userBlogPosts) {
+    userBlogPostObj.querySelector(".post-update-btn").addEventListener("click", e=>{
+        e.preventDefault();
+        const blogPostObj = {
+            title:document.querySelector(".update-title").value,
+            content:document.querySelector(".update-post").value,
+        }
+        fetch("/api/blogpost/" + e.target.dataset.blogpostUpdateId,{
             method:"PUT",
+            body:JSON.stringify(blogPostObj),
+            headers:{
+                "Content-Type":"application/json"
+            }
         }).then(res=>{
             if(res.ok){
-                location.reload()
+            location.reload()
             } else {
                 alert("Something went wrong")
             }
         })
     })
-})
+}
 
+// front end route delete blog post
 const allDelBtns = document.querySelectorAll(".post-del-btn");
 allDelBtns.forEach(button=>{
     button.addEventListener("click",()=>{
@@ -51,6 +62,7 @@ allDelBtns.forEach(button=>{
     })
 })
 
+// front end route delete comment post
 const allCommentDelBtns = document.querySelectorAll(".comment-del-btn");
 allCommentDelBtns.forEach(button=>{
     button.addEventListener("click",()=>{

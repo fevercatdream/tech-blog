@@ -1,30 +1,36 @@
 <h2>{{name}}'s page</h2>
 
-<h3>Add a new Blog Post</h3>
-<form action="">
-    <input type="text" id="title" placeholder="title">
-    <textarea id="blog_post" placeholder="blog post"></textarea>
-    <button>Add a blog post</button>
-</form>
+<section class="add-blog-post">
+    <h3>Add a new Blog Post</h3>
+    <form action="">
+        <input id="title" value="" type="text" placeholder="title">
+        <textarea id="blog_post" placeholder="blog post"></textarea>
+        <button>Add a blog post</button>
+    </form>
+</section>
 
 <h3>Blog Posts</h3>
 {{#each blog_posts}}
-    <h3>{{title}}</h3>
-    <p>{{content}}</p>
-    <p>Date: {{date_created}}</p>
-    <button class="post-update-btn" data-blogpost-update-id="{{id}}">Update</button>
-    <button class="post-del-btn" data-blogpost-id="{{id}}">Delete</button>
-    <hr>
+    <section class="user-blog-post">
+        <h4><input class="update-title" value="{{title}}" type="text" placeholder="title" /></h4>
+        <textarea class="update-post">{{content}}</textarea>
+        <p>Date: {{date_created}}</p>
+        <button class="post-update-btn" data-blogpost-update-id="{{id}}">Update</button>
+        <button class="post-del-btn" data-blogpost-id="{{id}}">Delete</button>
+        <hr>
+    </section>
 {{/each}}
 
 <h3>Comments</h3>
 {{#each comments}}
-    <p>{{comment}}</p>
-    <p>Date: {{date_created}}</p>
-    <a href="/blogpost/{{blog_post_id}}">Go To Blog Post</a>
-    <button class="comment-update-btn" data-comment-update-id="{{id}}">Update</button>
-    <button class="comment-del-btn" data-comment-id="{{id}}">Delete</button>
-    <hr>
+    <section class="user-comment">
+        <textarea>{{comment}}</textarea>
+        <p>Date: {{date_created}}</p>
+        <a href="/blogpost/{{blog_post_id}}">Go To Blog Post</a>
+        <button class="comment-update-btn" data-comment-update-id="{{id}}">Update</button>
+        <button class="comment-del-btn" data-comment-id="{{id}}">Delete</button>
+        <hr>
+    </section>
 {{/each}}
 
 <script src="/js/profile.js"></script>

@@ -1,12 +1,12 @@
 const router = require('express').Router();
 const { Comment } = require('../../models');
 
+// back end route add comment
 router.post('/', async (req, res) => {
   if(!req.session.logged_in){
     return res.status(403).json({msg:"Login first!"})
   }
   try {
-    console.log("Howdy", req.body);
     const newCommentPost = await Comment.create({
       ...req.body,
       user_id: req.session.user_id,
@@ -18,6 +18,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+// back end route delete comment
 router.delete('/:id', async (req, res) => {
   if(!req.session.logged_in){
     return res.status(403).json({msg:"Login first!"})

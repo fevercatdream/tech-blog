@@ -11,10 +11,17 @@
     </form>
 {{/if}}
 {{#each comments}}
-    <p>{{comment}}</p>
+    {{#if editable}}
+        <textarea>{{comment}}</textarea>
+    {{else}}
+        <p>{{comment}}</p>
+    {{/if}}
     <span> by {{user.name}}</span>
     <p>Date: {{date_created}}</p>
-
+    {{#if editable}}
+        <button class="comment-update-btn" data-comment-update-id="{{id}}">Update</button>
+        <button class="comment-del-btn" data-comment-id="{{id}}">Delete</button>
+    {{/if}}
     <hr>
 {{/each}}
 
