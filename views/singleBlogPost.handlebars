@@ -1,6 +1,17 @@
-<h2>{{title}} by {{user.name}}</h2>
-<p>Date: {{date_created}}</p>
-<p>{{content}}</p>
+{{#if editableBlog}}
+    <section class="user-blog-post">
+        <h4><input class="update-title" value="{{title}}" type="text" placeholder="title" />by {{user.name}}</h4>
+        <textarea class="update-post">{{content}}</textarea>
+        <p>Date: {{date_created}}</p>
+        <button class="post-update-btn" data-blogpost-update-id="{{id}}">Update</button>
+        <button class="post-del-btn" data-blogpost-id="{{id}}">Delete</button>
+    </section>
+{{else}}
+    <h2>{{title}} by {{user.name}}</h2>
+    <p>Date: {{date_created}}</p>
+    <p>{{content}}</p>
+{{/if}}
+
 <h3>Comments</h3>
 {{#if logged_in}}
     <h3>Add a comment</h3>
@@ -11,18 +22,20 @@
     </form>
 {{/if}}
 {{#each comments}}
+        <section class="user-comment">
     {{#if editable}}
-        <textarea>{{comment}}</textarea>
+            <textarea class="update-comment">{{comment}}</textarea>
     {{else}}
-        <p>{{comment}}</p>
+            <p>{{comment}}</p>
     {{/if}}
-    <span> by {{user.name}}</span>
-    <p>Date: {{date_created}}</p>
+            <span> by {{user.name}}</span>
+            <p>Date: {{date_created}}</p>
     {{#if editable}}
-        <button class="comment-update-btn" data-comment-update-id="{{id}}">Update</button>
-        <button class="comment-del-btn" data-comment-id="{{id}}">Delete</button>
+            <button class="comment-update-btn" data-comment-update-id="{{id}}">Update</button>
+            <button class="comment-del-btn" data-comment-id="{{id}}">Delete</button>
     {{/if}}
-    <hr>
+            <hr>
+        </section>
 {{/each}}
 
 <script src="/js/singleBlogPost.js"></script>

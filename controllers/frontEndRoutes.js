@@ -28,10 +28,11 @@ router.get("/blogpost/:id",(req,res)=>{
             return;
         } 
         const hbsData = blogData.get({plain:true});
-        hbsData.logged_id=req.session.logged_id
+        hbsData.logged_id=req.session.user_id
+        hbsData.editableBlog = hbsData.user_id === req.session.user_id;
         for (let i = 0; i < hbsData.comments.length; i++) {
             const currentComment = hbsData.comments[i];
-            currentComment.editable = currentComment.user_id === req.session.logged_id;
+            currentComment.editable = currentComment.user_id === req.session.user_id;
         }
         res.render("singleBlogPost", {
             ...hbsData,

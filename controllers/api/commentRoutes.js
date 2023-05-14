@@ -18,6 +18,29 @@ router.post('/', async (req, res) => {
   }
 });
 
+// back end route update comment
+router.put('/:id', async (req, res) => {
+  if(!req.session.logged_in){
+    // 401 - not authorized, 403 - forbidden
+    return res.status(401).json({msg:"Login first!"})
+  }
+  try {
+    const updateComment = await Comment.update({
+      ...req.body,
+      user_id: req.session.user_id,
+     }, 
+     {
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      }
+    });
+    res.status(200).json(updateComment);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 // back end route delete comment
 router.delete('/:id', async (req, res) => {
   if(!req.session.logged_in){

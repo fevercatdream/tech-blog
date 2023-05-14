@@ -15,6 +15,7 @@
         <h4><input class="update-title" value="{{title}}" type="text" placeholder="title" /></h4>
         <textarea class="update-post">{{content}}</textarea>
         <p>Date: {{date_created}}</p>
+        <a href="/blogpost/{{id}}">Go To Blog Post</a>
         <button class="post-update-btn" data-blogpost-update-id="{{id}}">Update</button>
         <button class="post-del-btn" data-blogpost-id="{{id}}">Delete</button>
         <hr>
@@ -24,7 +25,7 @@
 <h3>Comments</h3>
 {{#each comments}}
     <section class="user-comment">
-        <textarea>{{comment}}</textarea>
+        <textarea class="update-comment">{{comment}}</textarea>
         <p>Date: {{date_created}}</p>
         <a href="/blogpost/{{blog_post_id}}">Go To Blog Post</a>
         <button class="comment-update-btn" data-comment-update-id="{{id}}">Update</button>
