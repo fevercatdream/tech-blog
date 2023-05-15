@@ -1,0 +1,26 @@
+:root {
+    --color-black: black;
+    --header-text-background-color: #231010;
+    --body-text-background-color: #D9EAD3;
+    --title-color: #9F9EA0;
+}
+
+html {
+    background-color: var(--body-text-background-color);
+    color: var(--color-black);
+}
+
+.header {
+    background-color: var(--header-text-background-color);
+    color: var(--body-text-background-color);
+}
+
+.header h1 {
+    background-color: var(--body-text-background-color);
+    color: var(--header-text-background-color);
+}
+
+.title {
+    background-color: var(--header-text-background-color);
+    color: var(--title-color);
+}

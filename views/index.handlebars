@@ -1,10 +1,13 @@
-<h1>Tech Blog</h1>
+<link rel="stylesheet" href="/css/index.css" />
+
 {{#each allBlogPosts}}
-    <a href="/blogpost/{{id}}"><span>{{title}}</span></a>
-    <br />
-    <span> by {{user.name}}</span>
-    <p>Date: {{date_created}}</p>
-    <hr>
+    <div id="{{id}}">
+        <a href="/blogpost/{{id}}"><span class="title">{{title}}</span></a>
+        <br />
+        <span> by {{user.name}}</span>
+        <p>Date: {{date_created}}</p>
+        <hr>
+    </div>
 {{/each}}
 
 <script src="/js/index.js"></script>
