@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/css/profile.css" />
 <h2>{{name}}'s page</h2>
 
 <section class="add-blog-post">
@@ -8,16 +9,21 @@
         <button>Add a blog post</button>
     </form>
 </section>
+<hr>
 
 <h3>Blog Posts</h3>
 {{#each blog_posts}}
     <section class="user-blog-post">
-        <h4><input class="update-title" value="{{title}}" type="text" placeholder="title" /></h4>
-        <textarea class="update-post">{{content}}</textarea>
+        <h4 class="update-title-ro">{{title}}</h4>
+        <input readonly class="update-title hidden" value="{{title}}" type="text" placeholder="title" />
+        <p class="update-post-ro">{{content}}</p>
+        <textarea readonly class="update-post hidden">{{content}}</textarea>
         <p>Date: {{date_created}}</p>
         <a href="/blogpost/{{id}}">Go To Blog Post</a>
-        <button class="post-update-btn" data-blogpost-update-id="{{id}}">Update</button>
+        <button class="post-update-btn" data-blogpost-id="{{id}}">Update</button>
+        <button class="save-btn hidden" data-blogpost-id="{{id}}">Save</button>
         <button class="post-del-btn" data-blogpost-id="{{id}}">Delete</button>
+        <button class="cancel-btn hidden" data-blogpost-id="{{id}}">Cancel</button>
         <hr>
     </section>
 {{/each}}
@@ -25,11 +31,14 @@
 <h3>Comments</h3>
 {{#each comments}}
     <section class="user-comment">
-        <textarea class="update-comment">{{comment}}</textarea>
+        <p class="update-comment-ro">{{comment}}</p>
+        <textarea readonly class="update-comment hidden">{{comment}}</textarea>
         <p>Date: {{date_created}}</p>
         <a href="/blogpost/{{blog_post_id}}">Go To Blog Post</a>
-        <button class="comment-update-btn" data-comment-update-id="{{id}}">Update</button>
+        <button class="comment-update-btn" data-comment-id="{{id}}">Update</button>
+        <button class="comment-save-btn hidden" data-comment-id="{{id}}">Save</button>
         <button class="comment-del-btn" data-comment-id="{{id}}">Delete</button>
+        <button class="comment-cancel-btn hidden" data-comment-id="{{id}}">Cancel</button>
         <hr>
     </section>
 {{/each}}

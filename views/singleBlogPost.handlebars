@@ -2,8 +2,12 @@
 
 {{#if editableBlog}}
     <section class="user-blog-post">
-        <h4><input readonly class="update-title" value="{{title}}" type="text" placeholder="title" />by {{user.name}}</h4>
-        <textarea readonly class="update-post">{{content}}</textarea>
+        <h4 class="update-title-ro">{{title}}</h4>
+        <input readonly class="update-title hidden" value="{{title}}" type="text" placeholder="title" />
+        <br />
+        <span> by {{user.name}}</span>
+        <p class="update-post-ro">{{content}}</p>
+        <textarea readonly class="update-post hidden">{{content}}</textarea>
         <p>Date: {{date_created}}</p>
         <button class="post-update-btn" data-blogpost-id="{{id}}">Update</button>
         <button class="save-btn hidden" data-blogpost-id="{{id}}">Save</button>
@@ -24,19 +28,24 @@
         <button>Add a comment</button>
         <input id="blog_post_id" type="hidden" value="{{id}}" />
     </form>
+    <hr>
+
 {{/if}}
 {{#each comments}}
         <section class="user-comment">
     {{#if editable}}
-            <textarea class="update-comment">{{comment}}</textarea>
+            <p class="update-comment-ro">{{comment}}</p>
+            <textarea readonly class="update-comment hidden">{{comment}}</textarea>
     {{else}}
             <p>{{comment}}</p>
     {{/if}}
             <span> by {{user.name}}</span>
             <p>Date: {{date_created}}</p>
     {{#if editable}}
-            <button class="comment-update-btn" data-comment-update-id="{{id}}">Update</button>
+            <button class="comment-update-btn" data-comment-id="{{id}}">Update</button>
+            <button class="comment-save-btn hidden" data-comment-id="{{id}}">Save</button>
             <button class="comment-del-btn" data-comment-id="{{id}}">Delete</button>
+            <button class="comment-cancel-btn hidden" data-comment-id="{{id}}">Cancel</button>
     {{/if}}
             <hr>
         </section>

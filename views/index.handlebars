@@ -1,6 +1,8 @@
 <h1>Tech Blog</h1>
 {{#each allBlogPosts}}
-    <a href="/blogpost/{{id}}"><span>{{title}} by {{user.name}}</span></a>
+    <a href="/blogpost/{{id}}"><span>{{title}}</span></a>
+    <br />
+    <span> by {{user.name}}</span>
     <p>Date: {{date_created}}</p>
     <hr>
 {{/each}}
