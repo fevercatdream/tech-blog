@@ -1,10 +1,14 @@
+<link rel="stylesheet" href="/css/singleBlogPost.css" />
+
 {{#if editableBlog}}
     <section class="user-blog-post">
-        <h4><input class="update-title" value="{{title}}" type="text" placeholder="title" />by {{user.name}}</h4>
-        <textarea class="update-post">{{content}}</textarea>
+        <h4><input readonly class="update-title" value="{{title}}" type="text" placeholder="title" />by {{user.name}}</h4>
+        <textarea readonly class="update-post">{{content}}</textarea>
         <p>Date: {{date_created}}</p>
-        <button class="post-update-btn" data-blogpost-update-id="{{id}}">Update</button>
+        <button class="post-update-btn" data-blogpost-id="{{id}}">Update</button>
+        <button class="save-btn hidden" data-blogpost-id="{{id}}">Save</button>
         <button class="post-del-btn" data-blogpost-id="{{id}}">Delete</button>
+        <button class="cancel-btn hidden" data-blogpost-id="{{id}}">Cancel</button>
     </section>
 {{else}}
     <h2>{{title}} by {{user.name}}</h2>
